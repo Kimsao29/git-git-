@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แฟ้มผลงานของ พิชญะ Phupui - วิศวกรระบบและผู้แก้ปัญหา</title>
+    <style>
+        /* ตั้งค่าพื้นฐาน */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ส่วนหัว */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background-color: #000;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        header .talk-btn {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* ส่วนฮีโร่ */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 150px 80px 80px 80px;
+            background-color: #000;
+        }
+
+        .hero .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 50px;
+        }
+
+        .hero .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero .content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hero .content .intro {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .hero .content .title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .hero .content .subtitle {
+            font-size: 20px;
+            color: #999;
+            max-width: 600px;
+        }
+
+        .hero .content .download-btn {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            width: fit-content;
+        }
+
+        .hero .content .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .hero .content .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ส่วน 'My Expertise' */
+        .expertise {
+            padding: 80px 80px;
+            background-color: #000;
+            text-align: center;
+        }
+
+        .expertise h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .expertise p {
+            font-size: 20px;
+            color: #999;
+            margin-bottom: 50px;
+        }
+
+        .expertise .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .expertise .card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .expertise .card h3 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .expertise .card p {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 0;
+        }
+
+        /* ส่วน 'About Me' */
+        .about {
+            padding: 80px 80px;
+            background-color: #000;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 20px;
+            color: #999;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about .approach {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .about .approach .card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .about .approach .card .blob {
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .about .approach .card h4 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .about .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .about .stats span {
+            font-size: 36px;
+        }
+
+        /* ส่วน 'Skills' */
+        .skills {
+            padding: 80px 80px;
+            background-color: #000;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .skills p {
+            font-size: 20px;
+            color: #999;
+            margin-bottom: 50px;
+        }
+
+        .skills .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skills .card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .skills .card h3 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .skills .card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills .card .tags span {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">PP</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Projects</a>
+        </nav>
+        <a href="#" class="talk-btn">Let's Talk</a>
+    </header>
+
+    <section class="hero">
+        <div class="profile-img">
+            <img src="assets/profile.png" alt="รูปถ่ายของพิชญะ Phupui">
+        </div>
+        <div class="content">
+            <div class="intro">I am Pichaya</div>
+            <div class="title">Computer Engineer</div>
+            <div class="subtitle">Blending logical engineering principles with clean, efficient code to create reliable, scalable digital solutions.</div>
+            <a href="#" class="download-btn">Download CV</a>
+            <div class="social-icons">
+                <a href="#"><img src="https://img.icons8.com/material-outlined/24/ffffff/linkedin.png" alt="ไอคอน LinkedIn"></a>
+                <a href="#"><img src="https://img.icons8.com/material-outlined/24/ffffff/github.png" alt="ไอคอน GitHub"></a>
+                <a href="#"><img src="https://img.icons8.com/material-outlined/24/ffffff/placeholder.png" alt="ตัวยึดไอคอนโซเชียล"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="expertise">
+        <h2>My Expertise</h2>
+        <p>Designing efficient scalable solutions</p>
+        <div class="cards">
+            <div class="card">
+                <h3>Systems Analysis & Design</h3>
+                <p>structured data flow, smooth processes</p>
+            </div>
+            <div class="card">
+                <h3>Backend Development</h3>
+                <p>strong, reliable logic, clean Python/Go/JS</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Solutions</h3>
+                <p>highly available, cost-efficient infrastructure</p>
+            </div>
+            <div class="card">
+                <h3>Algorithms & Performance</h3>
+                <p>efficient, dependable code, optimized queries</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>I'm a passionate engineer focused on blending thought into seamless systems by understanding stakeholder needs.</p>
+        <div class="approach">
+            <div class="card">
+                <div class="blob">01</div>
+                <h4>Understand users & goals</h4>
+            </div>
+            <div class="card">
+                <div class="blob">02</div>
+                <h4>Create clean UI layouts</h4>
+            </div>
+            <div class="card">
+                <div class="blob">03</div>
+                <h4>Responsive experiences</h4>
+            </div>
+        </div>
+        <div class="stats">
+            <div><span>02+</span> Years Of Experience</div>
+            <div><span>10+</span> Projects Completed</div>
+            <div><span>05+</span> Clients Served</div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h2>Skills</h2>
+        <p>Technical Arsenal .Database </p>
+        <div class="cards">
+            <div class="card">
+                <h3>Core Skills</h3>
+                <div class="tags">
+                    <span>System Design</span>
+                    <span>Algorithm Design</span>
+                    <span>Responsive Systems</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Backend Tech</h3>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>REST APIs</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Tools & Infra</h3>
+                <div class="tags">
+                    <span>Docker</span>
+                    <span>AWS</span>
+                    <span>Git</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Interpersonal</h3>
+                <div class="tags">
+                    <span>Problem Solving</span>
+                    <span>Project Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
